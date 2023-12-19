@@ -1,0 +1,82 @@
+@media (max-width: 1280px) {
+  .autoContainer {
+    padding: 0 40px;
+  }
+  @include index-1280;
+}
+@media (max-width: 1160px) {
+  .autoContainer {
+    padding: 0 30px;
+  }
+  @include components-1160;
+  @include header-1160;
+  @include index-1160;
+}
+@media (max-width: 1025px) {
+  body {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .autoContainer {
+    padding: 0 20px;
+  }
+  @include typography-1025;
+  @include components-1025;
+  @include header-1025;
+  @include index-1025;
+}
+
+@media (max-width: 940px) {
+  @include index-940;
+}
+@media (max-width: 860px) {
+  @include typography-860;
+  @include components-860;
+  @include header-860;
+  @include index-860;
+}
+@media (max-width: 768px) {
+  .autoContainer {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 660px) {
+  body {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  @include typography-660;
+  @include components-660;
+  @include header-660;
+  @include index-660;
+}
+@media (max-width: 580px) {
+  @include typography-580;
+  @include components-580;
+  @include index-580;
+}
+@media (max-width: 460px) {
+}
+@media (max-width: 390px) {
+}
+
+// @mixin index-1280 {
+// }
+// @mixin index-1160 {
+// }
+// @mixin index-1025 {
+// }
+// @mixin index-940 {
+// }
+// @mixin index-860 {
+// }
+// @mixin index-768 {
+// }
+// @mixin index-660 {
+// }
+// @mixin index-580 {
+// }
+// @mixin index-460 {
+// }
+// @mixin index-390 {
+// }
