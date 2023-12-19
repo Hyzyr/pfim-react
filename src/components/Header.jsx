@@ -3,15 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const header = useRef(null);
-  const body = document.body;
 
   const toggle = () => {
     setMenu(!menu);
-    if (menu === false) {
-      body.classList.add("active");
-    } else {
-      body.classList.remove("active");
-    }
   };
   const onFogClick = (e) => {
     if (e.target === e.currentTarget && menu) toggle();
@@ -44,7 +38,7 @@ const Header = () => {
     });
     function onLinkClick(linkItem) {
       linkItem.addEventListener("click", function () {
-        toggle();
+        setMenu(false);
       });
     }
     window.onscroll = function () {
@@ -56,7 +50,7 @@ const Header = () => {
       <header className="header" ref={header}>
         <div className="autoContainer">
           <div className="header__inner">
-            <a href="#hero" className="logo">
+            <a href="#" className="logo">
               <img src="./images/logo.svg" alt="logo" />
             </a>
             <nav className={`nav ${menu ? "active" : ""}`} onClick={onFogClick}>
