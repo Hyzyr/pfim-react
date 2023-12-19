@@ -56,7 +56,7 @@ const Header = () => {
       <header className="header" ref={header}>
         <div className="autoContainer">
           <div className="header__inner">
-            <a href="#" className="logo">
+            <a href="#hero" className="logo">
               <img src="./images/logo.svg" alt="logo" />
             </a>
             <nav className={`nav ${menu ? "active" : ""}`} onClick={onFogClick}>
