@@ -267,6 +267,37 @@
         height: 100%;
       }
     }
+    &-dots {
+      display: flex !important;
+      justify-content: center;
+      li {
+        width: unset;
+        height: unset;
+
+        button {
+          background: transparent;
+          width: 2.5rem;
+          height: 15px;
+          &:before {
+            content: "";
+            top: unset;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background: white;
+            opacity: 1;
+            transition: 0.2s ease;
+          }
+        }
+        &.slick-active {
+          button {
+            &:before {
+              background: $blue-2;
+            }
+          }
+        }
+      }
+    }
   }
 }
 .client {
@@ -396,7 +427,7 @@
     }
     .slick {
       &-slider {
-        padding-bottom: 70px;
+        padding-bottom: 20px;
       }
       &-arrow {
         left: unset;
@@ -699,6 +730,22 @@
     }
     .bg {
       height: calc(100% - 242px);
+    }
+    .slick {
+      &-slider {
+        padding-bottom: 15px;
+      }
+      &-dots {
+        li {
+          button {
+            width: 1.5rem;
+            height: 5px;
+            &:before {
+              height: 2px;
+            }
+          }
+        }
+      }
     }
   }
   .client {

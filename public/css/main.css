@@ -1266,6 +1266,37 @@ svg {
 .offering .slick-slide > div {
   height: 100%;
 }
+.offering .slick-dots {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.offering .slick-dots li {
+  width: unset;
+  height: unset;
+}
+.offering .slick-dots li button {
+  background: transparent;
+  width: 2.5rem;
+  height: 15px;
+}
+.offering .slick-dots li button:before {
+  content: "";
+  top: unset;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: white;
+  opacity: 1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.offering .slick-dots li.slick-active button:before {
+  background: #3590d5;
+}
 
 .client {
   position: relative;
@@ -1404,7 +1435,7 @@ svg {
     font-size: 80px;
   }
   .offering .slick-slider {
-    padding-bottom: 70px;
+    padding-bottom: 20px;
   }
   .offering .slick-arrow {
     left: unset;
@@ -1924,6 +1955,16 @@ svg {
   }
   .offering .bg {
     height: calc(100% - 242px);
+  }
+  .offering .slick-slider {
+    padding-bottom: 15px;
+  }
+  .offering .slick-dots li button {
+    width: 1.5rem;
+    height: 5px;
+  }
+  .offering .slick-dots li button:before {
+    height: 2px;
   }
   .client__tab-button {
     margin-bottom: 30px;

@@ -36,8 +36,9 @@ const Offering = () => {
       color: "violetLight",
     },
   ];
-  var settings = {
-    dots: false,
+  const settings = {
+    dots: true,
+    arrows: false,
     infinite: false,
     speed: 500,
     slidesToShow: 5,
@@ -77,7 +78,7 @@ const Offering = () => {
   };
   return (
     <>
-    <div className="anchor" id="offering"></div>
+      <div className="anchor" id="offering"></div>
       <section className="offering">
         <div className="autoContainer">
           <div className="offering__inner">
@@ -101,25 +102,7 @@ const Offering = () => {
             </div>
             <Slider className="offering__row" {...settings}>
               {data.map((item, i) => (
-                <div
-                  className={`offering__item ${
-                    item.color ? `offering__item--${item.color}` : ""
-                  }`}
-                  key={i}
-                >
-                  <div className="offering__text">
-                    <strong>{item.title_strong}</strong>
-                    <span>{item.title}</span>
-                  </div>
-                  <p>{item.p}</p>
-                  {item.shape ? (
-                    <div className="shape">
-                      <img src={`${item.shape}`} alt="shape" />
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                </div>
+                <OfferCard {...item} key={i} />
               ))}
             </Slider>
           </div>
@@ -134,4 +117,23 @@ const Offering = () => {
   );
 };
 
+const OfferCard = ({ color, title_strong, title, p, shape }) => {
+  return (
+    <div
+      className={`offering__item ${color ? `offering__item--${color}` : ""}`}
+      style={{ width: "100%" }}
+    >
+      <div className="offering__text">
+        <strong>{title_strong}</strong>
+        <span>{title}</span>
+      </div>
+      <p>{p}</p>
+      {shape && (
+        <div className="shape">
+          <img src={`${shape}`} alt="shape" />
+        </div>
+      )}
+    </div>
+  );
+};
 export default Offering;

@@ -1,43 +1,37 @@
 import React, { useEffect, useState } from "react";
+
+const data = [
+  {
+    title: "Investment",
+    title_strong: "Banks",
+    p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
+  },
+  {
+    title: "Asset",
+    title_strong: "Managers",
+    p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
+  },
+  {
+    title: "Wealth",
+    title_strong: "Managers",
+    p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
+  },
+  {
+    title: "Hedge",
+    title_strong: "Funds",
+    p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
+  },
+];
+
 const Client = () => {
-  const [state, setState] = useState("active");
-  const data = [
-    {
-      title: "Investment",
-      title_strong: "Banks",
-      p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
-    },
-    {
-      title: "Asset",
-      title_strong: "Managers",
-      p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
-    },
-    {
-      title: "Wealth",
-      title_strong: "Managers",
-      p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
-    },
-    {
-      title: "Hedge",
-      title_strong: "Funds",
-      p: "Integrating AI-powered insights, PFIM optimizes efficiency, providing Investment Banks a strategic edge in the dynamic financial landscape. Precision, excellence, and success define the PFIM advantage.",
-    },
-  ];
-  const Tab = (i) => {
-    const tabButton = document.querySelectorAll(".tabBtn");
-    const tabConetent = document.querySelectorAll(".tabEvent");
-    tabConetent.forEach((item) => {
-      item.classList.remove("active");
-      if (item.getAttribute("id") === `tab-${i}`) {
-        item.classList.add("active");
-      }
-    });
-    tabButton.forEach((button) => {
-      button.classList.remove("active");
-      if (button.getAttribute("data-tab") === `#tab-${i}`) {
-        button.classList.add("active");
-      }
-    });
+  const [tab, setTab] = useState(data[0].title);
+  const getBTNClassName = (data) => {
+    let activeClass = tab === data.title ? "active" : "";
+    return `client__tab-button text--underline ${activeClass}`;
+  };
+  const getContentClassName = (data) => {
+    let activeClass = tab === data.title ? "active" : "";
+    return `client__tab-content  ${activeClass}`;
   };
   return (
     <>
@@ -52,25 +46,13 @@ const Client = () => {
               {data.map((item, i) => (
                 <div className="client__tab" key={i}>
                   <button
-                    className={`client__tab-button text--underline tabBtn ${
-                      i === 0 ? "active" : ""
-                    }`}
-                    data-tab={`#tab-${i}`}
-                    onClick={() => {
-                      Tab(i);
-                    }}
+                    className={getBTNClassName(item)}
+                    onClick={() => setTab(item.title)}
                   >
-                    <strong>{item.title}</strong>
+                    <strong>{item.title}</strong>{" "}
                     <span>{item.title_strong}</span>
                   </button>
-                  <p
-                    className={`client__tab-content tabEvent ${
-                      i === 0 ? "active" : ""
-                    }`}
-                    id={`tab-${i}`}
-                  >
-                    {item.p}
-                  </p>
+                  <p className={getContentClassName(item)}>{item.p}</p>
                 </div>
               ))}
             </div>

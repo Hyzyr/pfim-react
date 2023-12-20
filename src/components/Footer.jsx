@@ -15,7 +15,7 @@ const Footer = () => {
               <a href="https://maps.app.goo.gl/d1t5JZjW6q8cATjs7">
                 128 City Road London, England, EC1V 2NX
               </a>
-              <a href="mailto:">info@zif.xyz</a>
+              <a href="mailto:info@zif.xyz">info@zif.xyz</a>
             </div>
           </div>
         </div>
