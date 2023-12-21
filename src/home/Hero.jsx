@@ -1,5 +1,11 @@
 import React from "react";
 
+const assetsFolder = process.env.PUBLIC_URL;
+const posterLink =
+  assetsFolder + "/videos/business_infographics_stock_market.png";
+const videoLink =
+  assetsFolder + "/videos/business_infographics_stock_market.mp4";
+
 const Hero = () => {
   return (
     <>
@@ -31,17 +37,12 @@ const Hero = () => {
           </div>
         </div>
         <div className="bg">
+          <div className="bg__image">
+            <img src={posterLink} alt="poster" />
+          </div>
           <div className="bg__video">
-            <video
-              autoPlay
-              muted
-              loop
-              poster="./videos/digital_futuristic_abstract-poster.png"
-            >
-              <source
-                src="./videos/digital_futuristic_abstract.mp4"
-                type="video/mp4"
-              />
+            <video width="100%" height="100%" autoPlay muted loop>
+              <source src={videoLink} type="video/mp4" />
             </video>
           </div>
         </div>

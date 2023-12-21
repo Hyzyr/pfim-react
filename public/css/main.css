@@ -626,7 +626,10 @@ svg {
   left: 0;
   z-index: -1;
 }
-.bg__image {
+.bg__image, .bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -638,6 +641,9 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.bg__image {
+  z-index: 0;
 }
 .bg__image img {
   width: 100%;
@@ -646,17 +652,7 @@ svg {
      object-fit: cover;
 }
 .bg__video {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  z-index: 1;
 }
 .bg__video video {
   width: 100%;
