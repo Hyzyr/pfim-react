@@ -41,7 +41,7 @@ const Hero = () => {
             <img src={posterLink} alt="poster" />
           </div>
           <div className="bg__video">
-            <video width="100%" height="100%" autoPlay muted loop>
+            <video width="100%" height="100%" autoPlay muted loop playsInline>
               <source src={videoLink} type="video/mp4" />
             </video>
           </div>

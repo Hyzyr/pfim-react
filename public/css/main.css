@@ -1340,6 +1340,7 @@ svg {
   padding: 26px 0 34px;
 }
 .client__tab-button {
+  color: #000000;
   font-size: 40px;
   letter-spacing: -0.8px;
   margin-bottom: 72px;
